@@ -1,7 +1,6 @@
 <template>
     <div class="w-full hidden md:flex justify-between py-10">
-        <NuxtLink to="/"
-            class="bg-clip-text w-fit bg-gradient-to-r from-[#9B1DFF] to-[#FFD705] text-transparent font-bold">Denzel
+        <NuxtLink to="/" class="gradient-text font-bold">Denzel
             Escoto</NuxtLink>
         <div class="flex flex-row space-x-[24px] font-bold">
             <NuxtLink v-for="page in pages.filter((page) => page.name !== 'Home')" :to="page.path">{{ page.name }}
@@ -9,7 +8,8 @@
         </div>
     </div>
     <div class="w-full flex md:hidden justify-between py-5">
-        <b class="bg-clip-text w-fit bg-gradient-to-r from-[#9B1DFF] to-[#FFD705] text-transparent">Denzel Escoto</b>
+        <NuxtLink to="/" class="gradient-text font-bold">Denzel
+            Escoto</NuxtLink>
         <Dialog>
             <DialogTrigger>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
