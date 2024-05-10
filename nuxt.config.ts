@@ -17,4 +17,7 @@ export default defineNuxtConfig({
     componentDir: "./components/ui",
   },
   pages: true,
+  routeRules: {
+    "/**": { prerender: true },
+  },
 });
