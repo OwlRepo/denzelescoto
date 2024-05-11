@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-col items-center">
         <HomeHero />
+        <HomeExperience />
     </div>
 </template>
 
