@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["shadcn-nuxt", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+  modules: [
+    "shadcn-nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
+    "nuxt-anchorscroll",
+  ],
   colorMode: {
     classSuffix: "",
   },

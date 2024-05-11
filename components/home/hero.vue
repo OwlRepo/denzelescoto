@@ -1,5 +1,5 @@
 <template>
-    <div
+    <div id="hero"
         class="flex flex-col items-center justify-center pt-[70px] md:pt-[160px] relative w-[302px] md:w-[686px] mt-10">
         <div class="absolute top-0 -left-[28px] md:-left-[54px]">
             <CurlyArrow />

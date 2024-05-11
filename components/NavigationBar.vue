@@ -3,14 +3,16 @@
         <NuxtLink to="/" class="gradient-text font-bold">Denzel
             Escoto</NuxtLink>
         <div class="flex flex-row space-x-[24px] font-bold">
-            <NuxtLink v-for="page in pages.filter((page) => page.name !== 'Home')" :to="page.path">{{ page.name }}
-            </NuxtLink>
+            <p role="button" v-for="page in pages.filter((page) => page.name !== 'Home')"
+                @click.prevent="scrollToAnchor(page.sectionId)">{{
+                    page.name }}
+            </p>
         </div>
     </div>
     <div class="w-full flex md:hidden justify-between py-5">
         <NuxtLink to="/" class="gradient-text font-bold">Denzel
             Escoto</NuxtLink>
-        <Dialog>
+        <Dialog :open="isDialogOpen" @update:open="toggleDialog($event, '')">
             <DialogTrigger>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 12H3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -20,11 +22,11 @@
                 </svg>
             </DialogTrigger>
             <DialogContent
-                class="w-full h-full bg-transparent flex flex-col items-center justify-center text-4xl backdrop-blur-[2px] border-none">
-                <NuxtLink v-for="page in pages" :to="page.path"
+                class="py-20 bg-transparent flex flex-col items-center justify-center text-4xl backdrop-blur-[2px] border-none">
+                <p @click.prevent="toggleDialog($event, page.sectionId)" v-for="page in pages"
                     :class="{ 'font-bold text-5xl': page.path === route.path }">
                     {{ page.name }}
-                </NuxtLink>
+                </p>
             </DialogContent>
         </Dialog>
 
@@ -32,28 +34,50 @@
 </template>
 
 <script setup>
-
+const isDialogOpen = ref(false)
 const route = useRoute()
 const pages = [
     {
         name: 'Home',
-        path: '/'
+        path: '/',
+        sectionId: 'hero'
     },
     {
         name: 'About',
-        path: '/about'
+        path: '/about',
+        sectionId: 'experience'
     },
     {
         name: 'Works',
-        path: '/works'
+        path: '/works',
+        sectionId: 'case-studies'
     },
     {
         name: 'Contact',
-        path: '/contact'
+        path: '/contact',
+        sectionId: 'hero'
     },
     {
         name: 'CV',
         path: '/cv'
     }
 ]
+const { scrollToAnchor } = useAnchorScroll({
+    toAnchor: {
+        scrollOptions: {
+            behavior: 'smooth',
+            offsetTop: 0,
+        }
+    }
+})
+
+function toggleDialog(e, sectionId) {
+    if (sectionId) {
+        isDialogOpen.value = !isDialogOpen.value
+        scrollToAnchor(sectionId)
+    }
+    else {
+        isDialogOpen.value = !isDialogOpen.value
+    }
+}
 </script>
