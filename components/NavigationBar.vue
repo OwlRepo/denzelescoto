@@ -20,7 +20,7 @@
                 </svg>
             </DialogTrigger>
             <DialogContent
-                class="w-full h-full bg-transparent flex flex-col items-center justify-center text-4xl backdrop-blur-[1px] border-none">
+                class="w-full h-full bg-transparent flex flex-col items-center justify-center text-4xl backdrop-blur-[2px] border-none">
                 <NuxtLink v-for="page in pages" :to="page.path"
                     :class="{ 'font-bold text-5xl': page.path === route.path }">
                     {{ page.name }}
