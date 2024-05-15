@@ -48,7 +48,7 @@
             </linearGradient>
         </defs>
     </svg>
-    <div class="h-[412px] md:h-[493px] flex flex-col w-full items-start pb-28 overflow-auto relative">
+    <div class="h-[412px] md:h-fit flex flex-col w-full items-start overflow-auto relative no-scrollbar pb-10">
         <div class="flex space-x-10">
             <div v-for="_ in 10"
                 class="flex-col border-l border-l-[#AF2DFF] pl-7 space-y-5 md:w-[523px] hidden md:flex">
