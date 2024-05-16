@@ -87,4 +87,11 @@ function windowOpen(url) {
     isDialogOpen.value = !isDialogOpen.value
     window.open(url, '_blank').focus()
 }
+
+
+useSeoMeta({
+    title:'Denzel Escoto',
+    ogTitle:'Denzel Escoto',
+    description:'Denzel Escoto is a designer who craft a good experience. Specializes in Figma.',
+})
 </script>
