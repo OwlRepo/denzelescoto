@@ -4,7 +4,7 @@
             Escoto</NuxtLink>
         <div class="flex flex-row space-x-[24px] font-bold">
             <p role="button" v-for="page in pages.filter((page) => page.name !== 'Home')"
-                @click.prevent="scrollToAnchor(page.sectionId)">{{
+                @click.prevent="page.sectionId ? scrollToAnchor(page.sectionId) : windowOpen(page.redirectTo)" :key="page.sectionId">{{
                     page.name }}
             </p>
         </div>
@@ -23,8 +23,8 @@
             </DialogTrigger>
             <DialogContent
                 class="py-20 bg-transparent flex flex-col items-center justify-center text-4xl backdrop-blur-[2px] border-none">
-                <p @click.prevent="toggleDialog($event, page.sectionId)" v-for="page in pages"
-                    :class="{ 'font-bold text-5xl': page.path === route.path }">
+                <p @click.prevent="page.sectionId ? toggleDialog($event, page.sectionId) : windowOpen(page.redirectTo)" v-for="page in pages"
+                    :class="{ 'font-bold text-5xl': page.path === route.path }" :key="page.sectionId">
                     {{ page.name }}
                 </p>
             </DialogContent>
@@ -59,7 +59,8 @@ const pages = [
     },
     {
         name: 'CV',
-        path: '/cv'
+        path: '/cv',
+        redirectTo:'https://firebasestorage.googleapis.com/v0/b/sampleproject-31206.appspot.com/o/Denzel%20Escoto%20CV.pdf?alt=media&token=0a01d7cf-b2fe-4df2-9bf9-2173192603c7'
     }
 ]
 const { scrollToAnchor } = useAnchorScroll({
@@ -79,5 +80,11 @@ function toggleDialog(e, sectionId) {
     else {
         isDialogOpen.value = !isDialogOpen.value
     }
+}
+
+
+function windowOpen(url) {
+    isDialogOpen.value = !isDialogOpen.value
+    window.open(url, '_blank').focus()
 }
 </script>

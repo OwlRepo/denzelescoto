@@ -138,3 +138,9 @@
         </div>
     </div>
 </template>
+
+<script setup>
+function windowOpen(url) {
+        window.open(url, '_blank').focus()
+    }
+</script>
