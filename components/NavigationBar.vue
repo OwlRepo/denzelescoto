@@ -84,7 +84,11 @@ function toggleDialog(e, sectionId) {
 
 
 function windowOpen(url) {
-    isDialogOpen.value = !isDialogOpen.value
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        isDialogOpen.value = !isDialogOpen.value
+    } 
     window.open(url, '_blank').focus()
 }
 
