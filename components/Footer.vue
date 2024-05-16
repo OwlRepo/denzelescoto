@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#010208] w-full h-[487px] grid grid-cols-1 md:grid-cols-2 px-[20px] md:px-[200px] py-[80px] mt-32">
+    <div id="footer" class="bg-[#010208] w-full h-[487px] grid grid-cols-1 md:grid-cols-2 px-[20px] md:px-[200px] py-[80px] mt-32">
         <div class="h-full flex flex-col justify-between">
             <b class="gradient-text md:whitespace-pre-line w-fit text-[24px] md:text-[32px]">{{ `Thanks for checking my works. 
             Want to work with me?` }}

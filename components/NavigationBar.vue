@@ -55,7 +55,7 @@ const pages = [
     {
         name: 'Contact',
         path: '/contact',
-        sectionId: 'hero'
+        sectionId: 'footer'
     },
     {
         name: 'CV',
