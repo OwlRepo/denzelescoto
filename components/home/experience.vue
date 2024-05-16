@@ -48,9 +48,9 @@
             </linearGradient>
         </defs>
     </svg>
-    <div class="h-[412px] md:h-fit flex flex-col w-full items-start overflow-auto relative no-scrollbar pb-10">
+    <div class="h-[412px] md:h-fit md:flex flex-col w-full items-start overflow-auto relative no-scrollbar pb-10 hidden">
         <div class="flex space-x-10">
-            <div v-for="_ in 10"
+            <div v-for="_ in 10" :key="_"
                 class="flex-col border-l border-l-[#AF2DFF] pl-7 space-y-5 md:w-[523px] hidden md:flex">
                 <b class="text-[18px]">Pickfans Pty Ltd</b>
                 <div class="flex space-x-2 text-[16px] items-center">
@@ -80,7 +80,3 @@
     </div>
 
 </template>
-
-<script setup>
-
-</script>
