@@ -8,7 +8,7 @@ const caseStudies = [
         role:'Lead Designer',
         project:'Freelance',
         timeline:'6 weeks',
-        toolsUsed:['Figma', 'Notion','PS'],
+        toolsUsed:'Figma, Notion, PS',
         overview:{
             background:{
                 title:'Background',
