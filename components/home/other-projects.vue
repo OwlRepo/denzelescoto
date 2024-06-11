@@ -12,8 +12,9 @@
                             <b class="text-[15px] group-hover:text-[#EB5757] mb-1"> {{ project.title }} </b>
                         </div>
                     </DialogTrigger>
-                    <DialogContent class="max-w-[100vw] bg-transparent border-none h-full p-10">
-                        <NuxtImg :src="project.imgSrc" class="w-full h-full object-contain mb-4 rounded-md" />
+                    <DialogContent class="max-w-[100vw] bg-transparent border-none max-h-[90vh] p-10">
+                        <NuxtImg :src="project.imgSrc"
+                            class="aspect-video h-full w-full object-contain mb-4 rounded-md" />
                     </DialogContent>
                 </Dialog>
             </CarouselItem>
@@ -41,8 +42,8 @@
                         <b class="text-[20px] group-hover:text-[#EB5757] mb-1"> {{ project.title }} </b>
                     </div>
                 </DialogTrigger>
-                <DialogContent class="max-w-[90vw] bg-transparent border-none h-full p-10">
-                    <NuxtImg :src="project.imgSrc" class="w-full h-full object-cover mb-4 rounded-md" />
+                <DialogContent class="max-w-[90vw] max-h-[90vh] bg-transparent border-none p-10">
+                    <NuxtImg :src="project.imgSrc" class="aspect-video h-full w-full object-contain mb-4 rounded-md" />
                 </DialogContent>
             </Dialog>
         </div>
