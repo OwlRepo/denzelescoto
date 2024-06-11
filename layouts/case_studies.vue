@@ -1,10 +1,8 @@
 <template>
     <div class="bg-[#010208]">
-        <div class="px-[30px] md:px-[200px]">
-            <NavigationBar />
-        </div>
+        <NavigationBar />
         <div>
-            <NuxtImg  :src="study.pageBanner" class="h-[378px] mb-4 object-cover w-full"/>
+            <NuxtImg  :src="study.pageBanner" class="h-[438px] mb-4 object-cover w-full"/>
         </div>
         <div>
             <slot/>

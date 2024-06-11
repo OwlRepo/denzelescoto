@@ -94,3 +94,11 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.navbar {
+  @apply fixed w-full shadow-md transition-transform duration-300 ease-in-out;
+}
+
+.hidden-navbar {
+  @apply transform -translate-y-full;
+}

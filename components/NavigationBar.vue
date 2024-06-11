@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full hidden md:flex justify-between py-10">
+    <div class="w-full hidden md:flex justify-between py-10 px-[30px] md:px-[200px] bg-[#020514]" :class="['navbar', { 'hidden-navbar': !isNavbarVisible }]">
         <NuxtLink to="/" class="gradient-text font-bold">Denzel
             Escoto</NuxtLink>
         <div class="flex flex-row space-x-[24px] font-bold">
@@ -9,7 +9,7 @@
             </p>
         </div>
     </div>
-    <div class="w-full flex md:hidden justify-between py-5">
+    <div class="w-full md:hidden justify-between py-10 px-[30px] md:px-[200px] bg-[#020514]" :class="['navbar', { 'hidden-navbar': !isNavbarVisible }]">
         <NuxtLink to="/" class="gradient-text font-bold">Denzel
             Escoto</NuxtLink>
         <Dialog :open="isDialogOpen" @update:open="toggleDialog($event, '')">
@@ -29,7 +29,6 @@
                 </p>
             </DialogContent>
         </Dialog>
-
     </div>
 </template>
 
@@ -92,6 +91,28 @@ function windowOpen(url) {
     window.open(url, '_blank').focus()
 }
 
+const isNavbarVisible = ref(true);
+let lastScrollTop = 0;
+
+const handleScroll = () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    isNavbarVisible.value = false;
+  } else {
+    isNavbarVisible.value = true;
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 
 useSeoMeta({
     title:'Denzel Escoto',

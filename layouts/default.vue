@@ -1,7 +1,7 @@
 <template>
     <div class=" bg-[#020514]">
-        <div class="px-[30px] md:px-[200px] bg-[#020514]">
-            <NavigationBar />
+        <NavigationBar />
+        <div class="px-[30px] md:px-[200px] pt-32 bg-[#020514]">
             <slot />
         </div>
         <Footer/>
