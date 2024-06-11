@@ -4,11 +4,10 @@
     </div>
     <Carousel class="w-full space-x-2 flex md:hidden">
         <CarouselContent>
-            <CarouselItem v-for="(_, index) in 5" :key="index">
+            <CarouselItem v-for="(project, index) in otherProjects" :key="index">
                 <div class="flex-col pl-7  flex md:hidden group">
-                    <NuxtImg src="img-placeholder.png" class="w-[342px] h-[378px] mb-4 object-cover rounded"/>
-                    <b class="text-[20px] group-hover:text-[#EB5757] mb-1"> PROJECT {{ index + 1 }} </b>
-                    <p class="text-[#6B6B6B] text-[16px] mb-3">UX Design, Case Study</p>
+                    <NuxtImg :src="project.imgSrc" class="w-[342px] h-[378px] mb-4 object-cover rounded" />
+                    <b class="text-[20px] group-hover:text-[#EB5757] mb-1"> {{ project.title }} </b>
                 </div>
             </CarouselItem>
         </CarouselContent>
@@ -28,12 +27,33 @@
     </svg>
     <div class="h-[412px] md:h-fit md:flex flex-col w-full items-start overflow-auto relative no-scrollbar pb-1 hidden">
         <div class="flex space-x-10">
-            <div v-for="(_,index) in 10" :key="_" class="flex-col pl-7 w-[590.85px] hidden md:flex group">
-                <NuxtImg src="img-placeholder.png" class="w-[590px] h-[378px] mb-4"/>
-                <b class="text-[20px] group-hover:text-[#EB5757] mb-1"> PROJECT {{ index + 1 }} </b>
-                <p class="text-[#6B6B6B] text-[16px] mb-3">UX Design, Case Study</p>
-            </div>
+            <Dialog v-for="(project) in otherProjects" :key="project.title">
+                <DialogTrigger role="button" as-child>
+                    <div class="flex-col pl-7 w-[590.85px] hidden md:flex group">
+                        <NuxtImg :src="project.imgSrc" class="w-[590px] h-[378px] mb-4 rounded-md" />
+                        <b class="text-[20px] group-hover:text-[#EB5757] mb-1"> {{ project.title }} </b>
+                    </div>
+                </DialogTrigger>
+                <DialogContent class="max-w-[90vw] bg-transparent border-none h-full p-10">
+                    <NuxtImg :src="project.imgSrc" class="w-full h-full object-cover mb-4 rounded-md" />
+                </DialogContent>
+            </Dialog>
         </div>
     </div>
-
 </template>
+
+<script setup lang="ts">
+import constants from '~/lib/constants';
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from '@/components/ui/dialog'
+
+const { otherProjects } = constants
+const imgSlug = ref('')
+</script>

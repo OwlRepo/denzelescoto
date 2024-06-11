@@ -147,9 +147,68 @@ const caseStudies = [
     }
 ]
 
+const otherProjects = [
+    {
+        title:'Sales Tracker - Mobile Design',
+        imgSrc: 'sales-tracker-mobile.png',
+        slug: 'sales-tracker-mobile-design',
+    },
+    {
+        title:'Astro AI - Web Design',
+        imgSrc: 'astro-ai-web.png',
+        slug: 'astro-ai-web-design',
+    },
+    {
+        title:'InCrypt - Legal and Tax Information Web App',
+        imgSrc: 'incrypt-web.png',
+        slug: 'incrypt-legal-and-tax-information-web-app',
+    },
+    {
+        title:'Real Estate Website redesign',
+        imgSrc: 'real-estate-web.png',
+        slug: 'real-estate-website-redesign',
+    },
+    {
+        title:'Shoe App',
+        imgSrc: 'shoe-app.png',
+        slug: 'shoe-app',
+    },
+    {
+        title:'E-commerce Redesign',
+        imgSrc: 'e-com-redesign.png',
+        slug: 'e-commerce-redesign',
+    },
+    {
+        title:'Zinema',
+        imgSrc: 'zinema.png',
+        slug: 'zinema',
+    },
+    {
+        title:'Fitness App',
+        imgSrc: 'fitness-app.png',
+        slug: 'fitness-app',
+    },
+    {
+        title:'Fitness App',
+        imgSrc: 'fitness-app.png',
+        slug: 'fitness-app',
+    },
+    {
+        title:'Case Study Buddy Redesign',
+        imgSrc: 'case-study-buddy-redesign.png',
+        slug: 'case-study-buddy-redesign',
+    },
+    {
+        title:'Korean Mart Logo',
+        imgSrc: 'korean-mart-logo.png',
+        slug: 'korean-mart-logo',
+    }
+]
+
 
 const constants = {
-    caseStudies
+    caseStudies,
+    otherProjects
 }
 
 export default constants
