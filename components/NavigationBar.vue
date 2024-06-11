@@ -2,12 +2,15 @@
     <div class="w-full hidden md:flex justify-between py-10 px-[30px] md:px-[200px] bg-[#020514]" :class="['navbar', { 'hidden-navbar': !isNavbarVisible }]">
         <NuxtLink to="/" class="gradient-text font-bold">Denzel
             Escoto</NuxtLink>
-        <div class="flex flex-row space-x-[24px] font-bold">
-            <p role="button" v-for="page in pages.filter((page) => page.name !== 'Home')"
+        <div class="flex flex-row space-x-[24px] font-bold" v-if="route.path === '/'">
+            <p  role="button" v-for="page in pages.filter((page) => page.name !== 'Home')"
                 @click.prevent="page.sectionId ? scrollToAnchor(page.sectionId) : windowOpen(page.redirectTo)" :key="page.sectionId">{{
                     page.name }}
             </p>
         </div>
+        <button v-else @click="navigateTo('/')" class="flex flex-row items-center space-x-2">
+           <ArrowBigLeft/>  <span>Go Back</span>
+        </button>
     </div>
     <div class="w-full md:hidden justify-between py-10 px-[30px] md:px-[200px] bg-[#020514]" :class="['navbar', { 'hidden-navbar': !isNavbarVisible }]">
         <NuxtLink to="/" class="gradient-text font-bold">Denzel
@@ -33,6 +36,8 @@
 </template>
 
 <script setup>
+import { ArrowBigLeft } from 'lucide-vue-next';
+
 const isDialogOpen = ref(false)
 const route = useRoute()
 const pages = [
