@@ -171,7 +171,7 @@
             <b class="text-[18px] text-[#00B473] mb-5 w-1/2">
                 Reflection
             </b>
-            <div class="flex flex-col space-y-2 md:w-[606px]">
+            <div class="flex flex-col space-y-2 md:w-[914px]">
                 <b class="text-[32px]">{{ study.reflection.takeaways.title }}</b>
                 <p class="text-[18px] text-[#C5C5C5]">{{ study.reflection.takeaways.description }}</p>
             </div>

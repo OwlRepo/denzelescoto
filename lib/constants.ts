@@ -141,7 +141,7 @@ const caseStudies = [
             title:'Reflection',
             takeaways:{
                 title:'Takeaways',
-                description:'Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. '
+                description:'These personas highlight the distinct needs and challenges of both buyers and vendors at a farmers market. By understanding and addressing these personas, the app can offer tailored features that enhance the overall market experience, improving convenience, efficiency, and engagement for both parties.'
             }
         }
     }
