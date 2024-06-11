@@ -5,10 +5,17 @@
     <Carousel class="w-full space-x-2 flex md:hidden">
         <CarouselContent>
             <CarouselItem v-for="(project, index) in otherProjects" :key="index">
-                <div class="flex-col pl-7  flex md:hidden group">
-                    <NuxtImg :src="project.imgSrc" class="w-[342px] h-[378px] mb-4 object-cover rounded" />
-                    <b class="text-[20px] group-hover:text-[#EB5757] mb-1"> {{ project.title }} </b>
-                </div>
+                <Dialog>
+                    <DialogTrigger role="button" as-child>
+                        <div class="flex-col px-7 md:hidden flex group">
+                            <NuxtImg :src="project.imgSrc" class="w-[342px] h-[378px] mb-4 object-cover rounded" />
+                            <b class="text-[15px] group-hover:text-[#EB5757] mb-1"> {{ project.title }} </b>
+                        </div>
+                    </DialogTrigger>
+                    <DialogContent class="max-w-[100vw] bg-transparent border-none h-full p-10">
+                        <NuxtImg :src="project.imgSrc" class="w-full h-full object-contain mb-4 rounded-md" />
+                    </DialogContent>
+                </Dialog>
             </CarouselItem>
         </CarouselContent>
     </Carousel>
