@@ -9,30 +9,30 @@ const caseStudies = [
         project:'Freelance',
         timeline:'6 weeks',
         toolsUsed:'Figma, Notion, PS',
-        overview:{
-            background:{
+        overview:[
+            {
                 title:'Background',
                 description:'Development and redesign of the digital platform for a local farmers market to increase vendor visibility, improve user engagement, and facilitate seamless online purchases.',
             },
-            problemStatement:{
+            {
                 title:'Problem Statement',
                 description:'The existing website was outdated and not user-friendly, leading to low online engagement and poor vendor visibility. Customers had difficulty finding information about vendors, products, and events.'
             },
-            goals:{
+            {
                 title:'Goals',
                 description:'Create an engaging, user-friendly digital platform that highlights vendors, simplifies the shopping experience, and increases community engagement.'
             }
-        },
+        ],
         research:{
             userResearch:{
                 title:'User Research',
                 description:'Conducted interviews and surveys with market visitors, vendors, and community members. Observed market interactions and analyzed website analytics.',
                 painPoints:{
-                    verndors:{
+                    vendors:{
                         title:'Pain Points for Vendors at a Local Farmers Market',
                         items:[
                             {
-                                title:'Low online engagement',
+                                title:'Limited Visibility',
                                 issue:'Issue: Difficulty in attracting new customers and standing out among other vendors.',
                                 impact:'Impact: Reduced sales and missed opportunities for customer engagement.'
                             },
@@ -49,7 +49,7 @@ const caseStudies = [
                         ]
                     },
                     buyers:{
-                        title:'Pain Points for Vendors at a Local Farmers Market',
+                        title:'Pain Points for Buyers at a Local Farmers Market',
                         items:[
                             {
                                 title:'Inconvenient Payment Options',
@@ -74,6 +74,7 @@ const caseStudies = [
                 title:'User Persona',
                 description:'The user persona creation process involved gathering detailed user research to identify key demographics, behaviors, and pain points. We developed personas like Emma, a health-conscious mom seeking convenience, and Carlos, an organic farmer aiming for better market visibility.',
                 vendorPersona:{
+                    image:'vendor_persona.png',
                     name:'Carlos',
                     demographics:{
                         age:45,
@@ -93,6 +94,7 @@ const caseStudies = [
                     ]
                 },
                 buyerPersona:{
+                    image:'buyer_persona.png',
                     name:'Emma Johnson',
                     demographics:{
                         age:32,
@@ -118,20 +120,23 @@ const caseStudies = [
             },
 
         },
-        designConcept:{
-            wireframes:{
+        designConcept:[
+            {
                 title: 'Wireframes',
                 description: 'The wireframing process began with structuring the app’s information architecture to ensure intuitive navigation, followed by creating low-fidelity wireframes for each screen focusing on usability. These wireframes outlined the layout of key sections such as Home, Market, Basket, and Account.',
+                bannerSrc:'wireframes.png'
             },
-            designSystem:{
+            {
                 title: 'Design System',
                 description: 'The design system journey for the farmers market app began with user research to identify key needs and behaviors of buyers and vendors, followed by creating user personas and scenarios. We then developed a cohesive visual identity and a comprehensive component library, ensuring consistency and scalability.',
+                bannerSrc:'design_system.png'
             },
-            finalDesign:{
+            {
                 title: 'Final Design',
                 description: 'The final design phase involved creating high-fidelity mockups, incorporating the established visual identity and ensuring consistency across all screens. These designs were validated through user testing, then refined and handed off to developers for implementation.',
+                bannerSrc:'final_design.png'
             },
-        },
+        ],
         reflection:{
             title:'Reflection',
             takeaways:{
